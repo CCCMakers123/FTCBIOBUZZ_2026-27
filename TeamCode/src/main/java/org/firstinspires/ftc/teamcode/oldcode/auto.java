@@ -1,8 +1,8 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.oldcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import org.firstinspires.ftc.teamcode.MechanumDrive;
-    @Autonomous
+
+@Autonomous
     public class auto extends OpMode {
         MechanumDrive drive = new MechanumDrive();
         @Override

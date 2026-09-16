@@ -1,15 +1,12 @@
-package org.firstinspires.ftc.teamcode;
-
+package org.firstinspires.ftc.teamcode.oldcode;
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.hardware.PIDFCoefficients;
-
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
-
-public class CappNightMechanumDrive {
+public class MechanumDrive {
         private DcMotor frontLeftMotor;
         private DcMotor backLeftMotor;
         private DcMotor frontRightMotor;
@@ -18,7 +15,6 @@ public class CappNightMechanumDrive {
         private DcMotor curry;
         private IMU imu;
         PIDFCoefficients pidfCoefficients1 = new PIDFCoefficients(610, 0, 0, 13.6183);
-
         public void init(HardwareMap hwMap)
         {
             frontLeftMotor = hwMap.get(DcMotor.class, "frontLeftDrive");
@@ -44,8 +40,6 @@ public class CappNightMechanumDrive {
                             RevHubOrientationOnRobot.UsbFacingDirection.FORWARD
                     );
             imu.initialize(new IMU.Parameters(RevOrientation));
-
-
         }
 
         public void drive(double forward, double strafe, double rotate)
@@ -65,7 +59,6 @@ public class CappNightMechanumDrive {
             frontRightMotor.setPower(maxSpeed * (frontRightPower/maxPower));
             backRightMotor.setPower(maxSpeed * (backRightPower/maxPower));
         }
-
         public void driveFieldRelative(double forward, double strafe, double rotate)
         {
             double theta = Math.atan2(forward, strafe);
