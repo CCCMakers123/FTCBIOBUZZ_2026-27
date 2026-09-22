@@ -1,9 +1,15 @@
 package org.firstinspires.ftc.teamcode.pedroPathing;
 
+import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
+
+import com.pedropathing.revhub.drivetrains.Mecanum;
+import com.pedropathing.revhub.localizers.PinpointLocalizer;
 import com.pedropathing.tuning.autotune.Procedure;
 import com.pedropathing.tuning.autotune.Tuner;
 
 import org.firstinspires.ftc.teamcode.pedroPathing.procedures.MecanumTuner;
+import org.firstinspires.ftc.teamcode.pedroPathing.procedures.PinpointTuner;
+import org.firstinspires.ftc.teamcode.pedroPathing.procedures.Tests;
 
 public class Tuning {
     // Tuners go here
@@ -11,5 +17,20 @@ public class Tuning {
     public static Procedure mechanumTuner()
     {
         return new MecanumTuner();
+    }
+    @Tuner
+    public static Procedure tests() {
+        return new Tests(hardwareMap -> new Mecanum(hardwareMap, Constants.drivetrainConfig), null, null);
+    }
+    @Tuner
+    public static Procedure pinpointTuner()
+    {
+        return new PinpointTuner();
+    }
+
+    @Tuner
+    public static Procedure tests()
+    {
+        return new Tests(hardwareMap -> new Mecanum(hardwareMap, Constants.drivetrainConfig),(hardwareMap -> new PinpointLocalizer(hardwareMap, Constants.localizerConfig)), null);
     }
 }
