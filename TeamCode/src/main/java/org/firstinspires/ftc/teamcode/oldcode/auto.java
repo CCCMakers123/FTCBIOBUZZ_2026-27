@@ -8,5 +8,5 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
         @Override
         public void init() {drive.init(hardwareMap);}
         @Override
-        public void loop() {drive.drive(0.1, 0, 0);}
+        public void loop() {drive.drive(0, 0, 0);}
     }
