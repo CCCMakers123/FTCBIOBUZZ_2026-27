@@ -15,7 +15,9 @@ public class StarterBotDrive {
     private DcMotor rightBackDrive;
     public DcMotorEx launcher;
     public DcMotor intake;
-    public CRServo windmillServo;
+
+    public DcMotor grip;
+
     public void init(HardwareMap hwMap)
     {
         leftFrontDrive = hwMap.get(DcMotor.class, "left_front_drive");
@@ -24,7 +26,8 @@ public class StarterBotDrive {
         rightBackDrive = hwMap.get(DcMotor.class, "right_back_drive");
         intake = hwMap.get(DcMotor.class, "intake");
         launcher = hwMap.get(DcMotorEx.class, "launcher");
-        windmillServo = hwMap.get(CRServo.class, "windmillServo");
+        grip = hwMap.get(DcMotor.class, "grip");
+
 
         leftFrontDrive.setDirection(DcMotor.Direction.REVERSE);
         rightFrontDrive.setDirection(DcMotor.Direction.FORWARD);
@@ -39,6 +42,8 @@ public class StarterBotDrive {
         launcher.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         launcher.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, new PIDFCoefficients(40, 0, 0, 12.5));
         intake.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        grip.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
 
 
     }

@@ -36,9 +36,9 @@ public class StarterBotTest extends OpMode {
             drive.intake.setPower(0.0);
         }
         if (gamepad1.right_bumper) {
-            drive.windmillServo.setPower(-1.0);
+            drive.grip.setPower(1.0);
         } else {
-            drive.windmillServo.setPower(0.0);
+            drive.grip.setPower(0.0);
         }
         if (gamepad1.b) {
             drive.intake.setPower(1.0);
