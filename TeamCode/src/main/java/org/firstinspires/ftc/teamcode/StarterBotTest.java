@@ -14,9 +14,26 @@ public class StarterBotTest extends OpMode {
         drive.init(hardwareMap);
     }
 
+    double invert = 1;
+    //boolean rotating = false;
+    //double timer = 0;
     @Override
     public void loop() {
-        drive.drive(-gamepad1.left_stick_y, gamepad1.left_stick_x, -gamepad1.right_stick_x);
+        if (gamepad1.dpadLeftWasPressed() /* && !rotating */) {
+            invert *= -1;
+            //rotating = true;
+            // time to rotate
+            //timer = 1;
+        }
+        double rx = -gamepad1.right_stick_x;
+        //if (rotating) {
+        //    rx = 1;
+        //    timer -= 0.01;
+        //}
+        //if (timer < 0) {
+        //    rotating = false;
+        //}
+        drive.drive(-gamepad1.left_stick_y*invert, gamepad1.left_stick_x*invert, rx);
         double actualVelocity = drive.launcher.getVelocity();
         telemetry.addData("Current Velocity", "%.2f", actualVelocity);
         if (gamepad1.dpadDownWasPressed()) {
