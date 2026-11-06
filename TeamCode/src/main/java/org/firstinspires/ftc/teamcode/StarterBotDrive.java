@@ -14,7 +14,7 @@ public class StarterBotDrive {
     private DcMotor rightFrontDrive;
     private DcMotor rightBackDrive;
     public DcMotorEx launcher;
-    public DcMotor intake;
+    public DcMotorEx intake;
 
     public DcMotor grip;
 
@@ -24,7 +24,7 @@ public class StarterBotDrive {
         rightFrontDrive = hwMap.get(DcMotor.class, "right_front_drive");
         leftBackDrive = hwMap.get(DcMotor.class, "left_back_drive");
         rightBackDrive = hwMap.get(DcMotor.class, "right_back_drive");
-        intake = hwMap.get(DcMotor.class, "intake");
+        intake = hwMap.get(DcMotorEx.class, "intake");
         launcher = hwMap.get(DcMotorEx.class, "launcher");
         grip = hwMap.get(DcMotor.class, "grip");
 
@@ -33,7 +33,6 @@ public class StarterBotDrive {
         rightFrontDrive.setDirection(DcMotor.Direction.FORWARD);
         leftBackDrive.setDirection(DcMotor.Direction.REVERSE);
         rightBackDrive.setDirection(DcMotor.Direction.FORWARD);
-        intake.setDirection(DcMotorSimple.Direction.REVERSE);
 
         leftFrontDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         leftBackDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);

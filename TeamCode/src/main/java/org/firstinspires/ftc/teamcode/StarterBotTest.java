@@ -31,7 +31,7 @@ public class StarterBotTest extends OpMode {
             drive.launcher.setVelocity(0.0);
         }
         if (gamepad1.x) {
-            drive.intake.setPower(-1.0);
+            drive.intake.setPower(1.0);
         } else {
             drive.intake.setPower(0.0);
         }
@@ -41,7 +41,7 @@ public class StarterBotTest extends OpMode {
             drive.grip.setPower(0.0);
         }
         if (gamepad1.b) {
-            drive.intake.setPower(1.0);
+            drive.intake.setPower(-1.0);
         } else {
             drive.intake.setPower(0.0);
         }
