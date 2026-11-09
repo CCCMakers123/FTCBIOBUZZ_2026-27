@@ -10,9 +10,7 @@ public class StarterBotTest extends OpMode {
     StarterBotDrive drive = new StarterBotDrive();
 
     @Override
-    public void init() {
-        drive.init(hardwareMap);
-    }
+    public void init() {drive.init(hardwareMap);}
 
     double invert = 1;
     //boolean rotating = false;
@@ -48,19 +46,19 @@ public class StarterBotTest extends OpMode {
             drive.launcher.setVelocity(0.0);
         }
         if (gamepad1.x) {
-            drive.intake.setPower(1.0);
+            drive.intakePower(1.0);
         } else {
-            drive.intake.setPower(0.0);
+            drive.intakePower(0.0);
         }
         if (gamepad1.right_bumper) {
-            drive.grip.setPower(1.0);
+            drive.windmill.setPower(1.0);
         } else {
-            drive.grip.setPower(0.0);
+            drive.windmill.setPower(0.0);
         }
         if (gamepad1.b) {
-            drive.intake.setPower(-1.0);
+            drive.intakePower(-1.0);
         } else {
-            drive.intake.setPower(0.0);
+            drive.intakePower(0.0);
         }
 
     }
